@@ -22,4 +22,8 @@ app.use("/user", userRoute);
 app.use("/comments", commentsRoute);
 app.use("/images", imageRoute);
 
+app.get('/', (req, res) => {
+    res.end('<h1>Server is working ....</h1>')
+})
+
 module.exports = app;
