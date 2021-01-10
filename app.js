@@ -23,8 +23,7 @@ app.use("/comments", commentsRoute);
 app.use("/images", imageRoute);
 
 app.get('/', (req, res) => {
-    res.status(200)
-    console.log('Server is working ....')
+    res.end('<h1>Server is working ....</h1>')
 })
 
 module.exports = app;
