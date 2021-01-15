@@ -9,10 +9,7 @@ app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(morgan('dev'));
 
 
-const postsRoute = require('./routes/posts');
 const userRoute = require('./routes/user');
-const commentsRoute = require('./routes/comments');
-const imageRoute = require('./routes/images');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
