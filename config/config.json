@@ -3,7 +3,7 @@
     "username": "GO7RM9hwVY",
     "password": "LYW8bNKT2U",
     "database": "GO7RM9hwVY",
-    "host": "remotemysql.com",
+    "host": "https://remotemysql.com",
     "dialect": "mysql",
     "operatorsAliases": 0
   },
