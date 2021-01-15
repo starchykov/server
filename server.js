@@ -7,7 +7,7 @@
 // server.listen(port,() => console.log(`Server is working on port ${port}`));
 
 const app = require('./app');
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 80
 
 //server listening
 app.listen(port, () => console.log(`Server is working on port ${port}`)
