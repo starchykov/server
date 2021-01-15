@@ -1,6 +1,7 @@
 const models = require('../models');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const keys = require("../config/keys").token;
 
 function signUp(req, res) {
     //Sign up
@@ -50,7 +51,7 @@ function login(req, res) {
                     const token = jwt.sign({
                         email: user.email,
                         userId: user.id
-                    }, process.env.JWT_KEY,  (err, token) => {
+                    }, keys.jwt,  (err, token) => {
                         res.status(200).json({
                             token: token,
                             message: "Authentication successful!"
