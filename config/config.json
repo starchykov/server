@@ -1,10 +1,17 @@
 {
   "development": {
-    "username": "GO7RM9hwVY",
-    "password": "YyCDtyKhuS",
-    "database": "GO7RM9hwVY",
-    "host": "https://remotemysql.com/",
-    "dialect": "mysql",
+    "username": "mhtqdgceaqzurg",
+    "password": "3f6bd8976c64446447857e3c8c6069b776c41a000ecc86bbd94cedd803bb0edc",
+    "database": "d3hd2te9lbt6p2",
+    "host": "ec2-52-204-113-104.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "protocol": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    },
     "operatorsAliases": 0
   },
   "test": {
@@ -16,11 +23,11 @@
     "operatorsAliases": 0
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
+    "username": "mhtqdgceaqzurg",
+    "password": "3f6bd8976c64446447857e3c8c6069b776c41a000ecc86bbd94cedd803bb0edc",
+    "database": "d3hd2te9lbt6p2",
+    "host": "ec2-52-204-113-104.compute-1.amazonaws.com",
+    "dialect": "postgresql",
     "operatorsAliases": 0
   }
 }
