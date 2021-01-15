@@ -22,12 +22,17 @@
     "dialect": "mysql",
     "operatorsAliases": 0
   },
-  "production": {
-    "username": "mhtqdgceaqzurg",
-    "password": "3f6bd8976c64446447857e3c8c6069b776c41a000ecc86bbd94cedd803bb0edc",
-    "database": "d3hd2te9lbt6p2",
-    "host": "ec2-52-204-113-104.compute-1.amazonaws.com",
-    "dialect": "postgresql",
-    "operatorsAliases": 0
-  }
+  "username": "mhtqdgceaqzurg",
+  "password": "3f6bd8976c64446447857e3c8c6069b776c41a000ecc86bbd94cedd803bb0edc",
+  "database": "d3hd2te9lbt6p2",
+  "host": "ec2-52-204-113-104.compute-1.amazonaws.com",
+  "dialect": "postgres",
+  "protocol": "postgres",
+  "dialectOptions": {
+    "ssl": {
+      "require": true,
+      "rejectUnauthorized": false
+    }
+  },
+  "operatorsAliases": 0
 }
