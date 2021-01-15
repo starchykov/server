@@ -52,8 +52,8 @@ function login(req, res) {
                         userId: user.id
                     }, process.env.JWT_KEY, function (err, token) {
                         res.status(200).json({
-                            message: "Authentication successful!",
-                            token: token
+                            token: token,
+                            message: "Authentication successful!"
                         });
                     });
                 } else {
