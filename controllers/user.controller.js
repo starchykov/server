@@ -52,14 +52,16 @@ function login(req, res) {
                         userId: user.id
                     }, process.env.JWT_KEY, function (err, token) {
                         res.status(200).json({
-                            token: token,
-                            message: "Authentication successful!"
+                            data: {
+                                'token': token,
+                                'message': "Authentication successful!"
+                            }
                         });
                     });
                 } else {
-                    res.status(401).json({
+                    res.json({
                         message: "Invalid credentials!",
-                    });
+                    }).status(401);
                 }
             });
         }
