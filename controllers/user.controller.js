@@ -45,17 +45,15 @@ function login(req, res) {
                 message: "Invalid credentials!",
             });
         } else {
-            bcryptjs.compare(req.body.password, user.password, function (err, result) {
+            bcryptjs.compare(req.body.password, user.password, (err, result) => {
                 if (result) {
                     const token = jwt.sign({
                         email: user.email,
                         userId: user.id
-                    }, process.env.JWT_KEY, function (err, token) {
+                    }, process.env.JWT_KEY,  (err, token) => {
                         res.status(200).json({
-                            data: {
-                                'token': token,
-                                'message': "Authentication successful!"
-                            }
+                            token: token,
+                            message: "Authentication successful!"
                         });
                     });
                 } else {
