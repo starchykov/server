@@ -4,15 +4,8 @@
   "description": "A REST API with Nodejs and Mysql",
   "main": "index.js",
   "scripts": {
-    "db:migrate:dev": "sequelize db:migrate --env development",
-    "db:migrate:test": "sequelize db:migrate --env test",
-    "db:migrate:production": "sequelize db:migrate --env production",
-    "db:reset": "sequelize db:migrate:undo",
-    "start": "SET NODE_ENV=production && node server.js",
-    "dev": "SET NODE_ENV=development  && node server.js",
-    "test": "SET NODE_ENV=testing  && node server.js"
-  }
-,
+    "start": "node server.js"
+  },
   "author": "Tharindu Lakshitha",
   "license": "ISC",
   "dependencies": {
