@@ -6,10 +6,18 @@ const morgan = require('morgan');
 const favicon = require('express-favicon');
 const path = require('path');
 
+const postsRoute = require('./routes/posts');
+const userRoute = require('./routes/user');
+const commentsRoute = require('./routes/comments');
+const imageRoute = require('./routes/images');
+
 const app = express();
 
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(morgan('dev'));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(favicon(__dirname + '/build/favicon.ico'));
 
@@ -17,14 +25,6 @@ app.use(favicon(__dirname + '/build/favicon.ico'));
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'build')));
 app.use('/', (req, res) => { res.sendFile(path.join(__dirname, 'build'))});
-
-const postsRoute = require('./routes/posts');
-const userRoute = require('./routes/user');
-const commentsRoute = require('./routes/comments');
-const imageRoute = require('./routes/images');
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/uploads', express.static('uploads'));
 app.use("/posts", postsRoute);
