@@ -15,6 +15,7 @@ app.use(favicon(__dirname + '/build/favicon.ico'));
 // the __dirname is the current directory from where the script is running
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'build')));
+app.use('/', (req, res) => { res.sendFile(path.join(__dirname, 'build/index.html'));});
 
 const postsRoute = require('./routes/posts');
 const userRoute = require('./routes/user');
@@ -23,8 +24,8 @@ const imageRoute = require('./routes/images');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/uploads', express.static('uploads'));
 
+app.use('/uploads', express.static('uploads'));
 app.use("/posts", postsRoute);
 app.use("/user", userRoute);
 app.use("/comments", commentsRoute);
