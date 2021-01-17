@@ -12,10 +12,11 @@ app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(morgan('dev'));
 
 app.use(favicon(__dirname + '/build/favicon.ico'));
+
 // the __dirname is the current directory from where the script is running
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'build')));
-app.use('/', (req, res) => { res.sendFile(path.join(__dirname, 'build/index.html'));});
+app.use('/', (req, res) => { res.sendFile(path.join(__dirname, 'build'))});
 
 const postsRoute = require('./routes/posts');
 const userRoute = require('./routes/user');
